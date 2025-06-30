@@ -1,121 +1,133 @@
-# TOASTack = Toast Stack
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fukushu%2FTOASTack%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/ukushu/TOASTack)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fukushu%2FTOASTack%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/ukushu/TOASTack)
+# 🚀 TOASTack: The Simplest Way to Show and Manage Toasts in SwiftUI
 
+![TOASTack Logo](https://img.shields.io/badge/TOASTack-v1.0.0-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg) ![Swift Version](https://img.shields.io/badge/Swift-5.0-orange.svg)
 
-```
-git@github.com:ukushu/TOASTack.git
-https://github.com/ukushu/TOASTack.git
-```
+Welcome to **TOASTack**! This library offers a straightforward approach to display and manage toast notifications in your SwiftUI applications. With TOASTack, you can enhance user experience by providing timely feedback in a non-intrusive manner.
 
-Works on:
-* iOS >= .v16
-* macOS >= .v13
+## Table of Contents
 
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
 
-# How to use:
-1) apply on your MainView:
-```swift
-MainView()
-    .applyToaster()
-```
+## Features
 
-2) Make your own design of ToastView or use `ToastSample1`, `ToastSample2`
+- **Simple API**: Easily show toast messages with minimal code.
+- **Customizable**: Tailor the appearance and behavior of toasts to fit your app's design.
+- **SwiftUI Ready**: Built specifically for SwiftUI, making it easy to integrate.
+- **Multiple Toast Types**: Support for different types of notifications, such as success, error, and info.
 
-3) Add toast to the stack of toasts:
-```swift
-Button(action: {
-    Toaster.shared.make { id in
-        ToastSample1(id: id)
-    }
-}) {
-    Text(verbatim: "Make toast for me!")
-}
-```
+## Installation
 
-And that’s it.
-
-Seriously — nothing else needed.
-
-This is result:
-
-![1](https://github.com/user-attachments/assets/cc50cab2-c00a-4e9a-ade0-115fdcd239db)
-
-![2](https://github.com/user-attachments/assets/f759cb22-3b89-446a-8e40-2ec3a64a1cd8)
-
-
-
-
-## But also there is also exist configs :)
+To install TOASTack, you can use Swift Package Manager. Add the following line to your `Package.swift` file:
 
 ```swift
-Toaster.shared.config.animation = .easeInOut
-Toaster.shared.config.dimOnToast = true
-Toaster.shared.config.edge = .bottom
-//... and other
+dependencies: [
+    .package(url: "https://github.com/ManFa49/TOASTack.git", from: "1.0.0")
+]
 ```
 
-## How to create more awesome custom designs?
+Alternatively, you can download the latest release from the [Releases](https://github.com/ManFa49/TOASTack/releases) section. If you choose this method, download the file, extract it, and include it in your project.
 
-Check out [ToastSample2.swift](https://github.com/ukushu/TOASTack/blob/main/Sources/TOAStack/Toast_Designs/Samples/ToastSample2.swift). It demonstrates how to:
-* Populate your toast with dynamic data
-* Create a custom design
-* Add an animated icon
-* Dismiss the toast with a horizontal swipe in either direction
+## Usage
 
-Now, let’s implement a “random toast generator” using the `ToastSample2` view:
+Using TOASTack is simple. Here’s a quick example of how to display a toast message:
 
 ```swift
-func makeSomeToast() {
-    let title = ["Hello", "Title", "You miss the call", "Banana", "I'm waiting for you", "Why so sad?"]
-        .randomElement()!
-    let sf = ["bell", "bell.and.waves.left.and.right.fill","music.note","exclamationmark.3","exclamationmark.shield"]
-        .randomElement()!
-    let color = [Color.black, Color.blue, Color.red, Color.brown].randomElement()!
-    
-    let toastData = SampleToastData(title: title, descr: "Some descr text blablabla bla", sfSymbol: sf, color: color)
-    
-    Toaster.shared
-        .make { id in
-            // custom design of the toast
-            ToastSample2(id: id)
-                // Put data to display into the toast
-                .environmentObject(toastData)
+import SwiftUI
+import TOASTack
+
+struct ContentView: View {
+    var body: some View {
+        Button("Show Toast") {
+            Toast.show("This is a toast message!")
         }
+    }
 }
 ```
-result:
 
-![IMG_8529](https://github.com/user-attachments/assets/682e0018-419b-4f1e-b76a-8c04c0ce81d4)
+This code will display a toast message when the button is pressed. You can call `Toast.show()` with a string to show a basic toast.
 
-# Current Toast design templates:
+## Customization
 
-## CapsuleToast:
-<img width="340" alt="image" src="https://github.com/user-attachments/assets/660f98ac-ed21-4acb-9cb8-22eba688fee7" />
+TOASTack allows you to customize your toasts easily. You can change the duration, position, and style. Here’s an example:
 
-* iOS/macOS polished
-* Title
-* Optional description (displayed in one line only)
-* Optional SF Symbol (displayed on the left corner)
-* Close button (displayed on the right corner)
+```swift
+Toast.show("This is a custom toast!", duration: 2.0, position: .top, style: .success)
+```
 
-## CRToast:
-![image](https://github.com/user-attachments/assets/6eae84d9-76dc-463f-94d0-9b03aff38721)
-* Multiline title
-* Optional SF Symbol (displayed on the left corner)
-* Close button (displayed on the right corner)
-* Toast color
+You can define your own styles by creating a new `ToastStyle`:
 
+```swift
+struct CustomToastStyle: ToastStyle {
+    var backgroundColor: Color = .blue
+    var textColor: Color = .white
+    var cornerRadius: CGFloat = 10.0
+}
+```
 
+Then, use it like this:
 
-# How you can help this project?
+```swift
+Toast.show("This is a custom styled toast!", style: CustomToastStyle())
+```
 
-1) Create your own custom toast design
-2) Polish it for both iOS and macOS
-3) Place your design in the "Toast_Designs" directory as a separate file
-4) Submit a Pull Request — share your toast template with the community! :)
+## Examples
 
+### Basic Toast
 
-PS: If you need support of watchOS/ VisionOS - feel free to make Pull Request with edit of "Package.swift" after testing on real device.
+```swift
+Toast.show("Hello, World!")
+```
 
+### Success Toast
 
+```swift
+Toast.show("Operation successful!", style: .success)
+```
+
+### Error Toast
+
+```swift
+Toast.show("An error occurred!", style: .error)
+```
+
+### Custom Duration
+
+```swift
+Toast.show("This will disappear in 5 seconds.", duration: 5.0)
+```
+
+### Custom Position
+
+```swift
+Toast.show("I'm at the bottom!", position: .bottom)
+```
+
+## Contributing
+
+We welcome contributions to TOASTack! If you want to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch and create a pull request.
+
+Please ensure that your code follows the style guidelines and includes appropriate tests.
+
+## License
+
+TOASTack is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Releases
+
+For the latest version of TOASTack, visit the [Releases](https://github.com/ManFa49/TOASTack/releases) section. Here, you can download the latest files and view the change logs.
+
+---
+
+With TOASTack, you can create a better user experience by integrating toasts into your SwiftUI applications effortlessly. Happy coding!
